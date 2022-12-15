@@ -1,0 +1,48 @@
+2022/12/15 16:40:09 [notice] 16#16: using the "epoll" event method
+2022/12/15 16:40:09 [notice] 16#16: nginx/1.21.6
+2022/12/15 16:40:09 [notice] 16#16: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/12/15 16:40:09 [notice] 16#16: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2022/12/15 16:40:09 [notice] 16#16: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/12/15 16:40:09 [notice] 16#16: start worker processes
+2022/12/15 16:40:09 [notice] 16#16: start worker process 17
+2022/12/15 16:40:09 [notice] 16#16: start worker process 18
+2022/12/15 16:40:09 [notice] 16#16: start worker process 19
+2022/12/15 16:40:09 [notice] 16#16: start worker process 20
+2022/12/15 16:40:09 [notice] 16#16: start worker process 21
+2022/12/15 16:40:09 [notice] 16#16: start worker process 22
+2022/12/15 16:40:09 [notice] 16#16: start worker process 23
+2022/12/15 16:40:09 [notice] 16#16: start worker process 24
+2022/12/15 16:40:09 [notice] 16#16: start worker process 25
+2022/12/15 16:40:09 [notice] 16#16: start worker process 26
+2022/12/15 16:40:09 [notice] 16#16: start worker process 27
+2022/12/15 16:40:09 [notice] 16#16: start worker process 28
+2022/12/15 16:40:09 [notice] 16#16: start worker process 29
+2022/12/15 16:40:09 [notice] 16#16: start worker process 30
+2022/12/15 16:40:09 [notice] 16#16: start worker process 31
+2022/12/15 16:40:09 [notice] 16#16: start worker process 32
+2022/12/15 17:30:12 [crit] 18#18: *2 connect() to unix:/run/php/php8.1-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.21.0.1, server: hrm.local, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.1-fpm.sock:", host: "localhost:9000"
+2022/12/15 17:30:47 [crit] 18#18: *2 connect() to unix:/run/php/php8.1-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.21.0.1, server: hrm.local, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.1-fpm.sock:", host: "localhost:9000"
+2022/12/15 17:30:49 [crit] 18#18: *2 connect() to unix:/run/php/php8.1-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.21.0.1, server: hrm.local, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.1-fpm.sock:", host: "localhost:9000"
+2022/12/15 17:32:54 [crit] 20#20: *6 connect() to unix:/run/php/php8.1-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.21.0.1, server: hrm.local, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.1-fpm.sock:", host: "localhost:9000"
+2022/12/15 17:34:38 [notice] 16#16: using the "epoll" event method
+2022/12/15 17:34:38 [notice] 16#16: nginx/1.21.6
+2022/12/15 17:34:38 [notice] 16#16: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/12/15 17:34:38 [notice] 16#16: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2022/12/15 17:34:38 [notice] 16#16: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/12/15 17:34:38 [notice] 16#16: start worker processes
+2022/12/15 17:34:38 [notice] 16#16: start worker process 17
+2022/12/15 17:34:38 [notice] 16#16: start worker process 18
+2022/12/15 17:34:38 [notice] 16#16: start worker process 19
+2022/12/15 17:34:38 [notice] 16#16: start worker process 20
+2022/12/15 17:34:38 [notice] 16#16: start worker process 21
+2022/12/15 17:34:38 [notice] 16#16: start worker process 22
+2022/12/15 17:34:38 [notice] 16#16: start worker process 23
+2022/12/15 17:34:38 [notice] 16#16: start worker process 24
+2022/12/15 17:34:38 [notice] 16#16: start worker process 25
+2022/12/15 17:34:38 [notice] 16#16: start worker process 26
+2022/12/15 17:34:38 [notice] 16#16: start worker process 27
+2022/12/15 17:34:38 [notice] 16#16: start worker process 28
+2022/12/15 17:34:38 [notice] 16#16: start worker process 29
+2022/12/15 17:34:38 [notice] 16#16: start worker process 30
+2022/12/15 17:34:38 [notice] 16#16: start worker process 31
+2022/12/15 17:34:38 [notice] 16#16: start worker process 32
