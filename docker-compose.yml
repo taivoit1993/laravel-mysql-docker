@@ -7,7 +7,9 @@ services:
     ports:
       - 9000:80
     networks:
-      - test-network
+      - laravel-network
+    depends_on:
+      - elasticsearch      
     volumes:
       - ./hrm-backend/:/var/www/html
       - ./docker/nginx-log:/var/log/nginx
@@ -19,13 +21,50 @@ services:
     ports:
       - "3308:3306"
     networks:
-      - test-network
+      - laravel-network
     volumes:
       - ./docker/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.0
+    container_name: elasticsearch
+    restart: always
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - elasticsearch-data1:/usr/share/elasticsearch/data
+    ports:
+      - 127.0.0.1:9200:9200
+    networks:
+      - laravel-network
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:7.4.0
+    restart: always
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200    # address of elasticsearch docker container which kibana will connect
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+    networks:
+      - laravel-network                                   # kibana will start when elasticsearch has started
     
 
 networks:
-  test-network:
+  laravel-network:
     driver: bridge
+volumes:
+  elasticsearch-data1:
