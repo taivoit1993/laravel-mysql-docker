@@ -3,6 +3,8 @@
 namespace App\Repository\Elasticsearch;
 
 interface ElasticsearchInterface{
+
+  public function getInfo();
   /**
    * Create a index
    * @array [index => "article"]
@@ -20,14 +22,14 @@ interface ElasticsearchInterface{
    * Update a Index
    * @array ['index' => 'article', 'id' => 1, 'body'=> []]
    */
-  public function updateDocument($params);
+  public function createOrUpdateDocument($params);
 
   /**
    * Update Multiple Index
    * @array ['body' => []]
    * @author taivo
    */
-  public function updateMulDocument($params);
+  public function updateMultipleDocuemnt($params);
 
   public function getDocument($params);
 

@@ -23,6 +23,9 @@ class ElasticsearchImplement implements ElasticsearchInterface
       ->setHosts($hosts)->build();
   }
 
+  public function getInfo(){
+    return $this->client->info();
+  }
   public function createIndex($params)
   {
     $indexExist = $this->client->indices()->exists($params);
@@ -34,23 +37,44 @@ class ElasticsearchImplement implements ElasticsearchInterface
         return $response;
       } catch (Exception $e) {
         //catch exception
-        throw $e->getMessage();
+        throw $e;
       }
     } else {
-      throw "Index {$params['index']} exist!";
+      throw new Exception("Index {$params['index']} exist!");
     }
   }
 
   public function deleteIndex($params)
   {
+    $indexExist = $this->client->indices()->exists($params);
+    if($indexExist){
+      try{
+        return $this->client->indices()->delete($params);
+      }catch(Exception $e){
+        throw $e;
+      }
+    } else {
+      throw new Exception("Index {$params['index']} not exist!");
+    }
   }
 
-  public function updateDocument($params)
+  public function createOrUpdateDocument($params)
   {
+    try {
+      return $this->client->index($params);
+    }catch(Exception $e){
+      throw $e;
+    }
+  
   }
 
-  public function updateMulDocument($params)
+  public function updateMultipleDocuemnt($params)
   {
+    try{
+      return $this->client->bulk($params);
+    }catch(Exception $e){
+      throw $e;
+    }
   }
 
   public function getDocument($params)

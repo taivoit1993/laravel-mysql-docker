@@ -14,6 +14,10 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->singleton(
+            \App\Repository\Elasticsearch\ElasticsearchInterface::class,
+            \App\Repository\Elasticsearch\ElasticsearchImplement::class
+        );
     }
 
     /**
